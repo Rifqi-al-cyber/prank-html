@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Prank Tombol Kabur</title>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f4f4f4;
+      font-family: sans-serif;
+    }
+
+    #prankButton {
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      position: absolute;
+      transition: top 0.3s, left 0.3s;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="prankButton">Klik aku!</button>
+
+  <script>
+    const button = document.getElementById('prankButton');
+
+    button.addEventListener('mouseover', () => {
+      const randomX = Math.floor(Math.random() * (window.innerWidth - 100));
+      const randomY = Math.floor(Math.random() * (window.innerHeight - 50));
+      button.style.left = `${randomX}px`;
+      button.style.top = `${randomY}px`;
+    });
+  </script>
+
+</body>
+</html>
